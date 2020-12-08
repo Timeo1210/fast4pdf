@@ -1,0 +1,33 @@
+{
+  "name": "fast4pdf",
+  "version": "0.1.0",
+  "description": "CLI for pdf tools that are available at https://ilovepdf.com/",
+  "main": "dist/index.js",
+  "bin": {
+    "fast4pdf": "./dist/index.js"
+  },
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Timeo1210/fast4pdf.git"
+  },
+  "keywords": [
+    "CLI",
+    "PDF",
+    "TOOLS",
+    "ilovepdf"
+  ],
+  "author": "Boulhol Timéo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Timeo1210/fast4pdf/issues"
+  },
+  "homepage": "https://github.com/Timeo1210/fast4pdf#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
