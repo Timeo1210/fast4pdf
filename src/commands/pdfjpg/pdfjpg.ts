@@ -14,7 +14,7 @@ export function makePdfjpgCommand(): commander.Command {
     .description("Convert a PDF to JPG image")
     .action((outputFile: string, inputFile: string, args: any) => {
       const options = {
-        pdfjpg_mode: args.extract === undefined ? "pages" : "extract",
+        pdfjpg_mode: args.pages ? "pages" : "extract",
       } as processPdfjpg;
 
       defaultAction("pdfjpg", outputFile, inputFile, options);

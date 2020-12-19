@@ -15,7 +15,7 @@ function makePdfjpgCommand() {
         .description("Convert a PDF to JPG image")
         .action((outputFile, inputFile, args) => {
         const options = {
-            pdfjpg_mode: args.extract === undefined ? "pages" : "extract",
+            pdfjpg_mode: args.pages ? "pages" : "extract",
         };
         defaultAction_1.default("pdfjpg", outputFile, inputFile, options);
     });
