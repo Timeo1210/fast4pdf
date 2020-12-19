@@ -14,8 +14,6 @@ function makePdfjpgCommand() {
         .option("-e, --extract", "extract all PDF's embed images to separate JPG images")
         .description("Convert a PDF to JPG image")
         .action((outputFile, inputFile, args) => {
-        console.log("inputFile:", inputFile);
-        console.log("outputFile:", outputFile);
         const options = {
             pdfjpg_mode: args.pages === true ? "pages" : "extract",
         };

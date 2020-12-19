@@ -1,1 +1,1 @@
-{"version":3,"file":"makeCommands.js","sourceRoot":"","sources":["../../src/commands/makeCommands.ts"],"names":[],"mappings":";;AACA,4CAAoD;AAEpD,SAAwB,YAAY,CAAC,OAA0B;IAC7D,OAAO,CAAC,UAAU,CAAC,0BAAiB,EAAE,CAAC,CAAC;AAC1C,CAAC;AAFD,+BAEC"}
+{"version":3,"file":"makeCommands.js","sourceRoot":"","sources":["../../src/commands/makeCommands.ts"],"names":[],"mappings":";;AACA,4CAAoD;AACpD,kDAA0D;AAE1D,SAAwB,YAAY,CAAC,OAA0B;IAC7D,OAAO,CAAC,UAAU,CAAC,0BAAiB,EAAE,CAAC,CAAC;IACxC,OAAO,CAAC,UAAU,CAAC,8BAAmB,EAAE,CAAC,CAAC;AAC5C,CAAC;AAHD,+BAGC"}
