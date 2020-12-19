@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.makePdfjpgCommand = void 0;
 const commander_1 = __importDefault(require("commander"));
-const action_1 = __importDefault(require("./action"));
+const defaultAction_1 = __importDefault(require("../../utils/defaultAction"));
 function makePdfjpgCommand() {
     const pdfjpg = new commander_1.default.Command("pdfjpg");
     pdfjpg
@@ -15,9 +15,9 @@ function makePdfjpgCommand() {
         .description("Convert a PDF to JPG image")
         .action((outputFile, inputFile, args) => {
         const options = {
-            pdfjpg_mode: args.pages === true ? "pages" : "extract",
+            pdfjpg_mode: args.extract === undefined ? "pages" : "extract",
         };
-        action_1.default(outputFile, inputFile, options);
+        defaultAction_1.default("pdfjpg", outputFile, inputFile, options);
     });
     return pdfjpg;
 }

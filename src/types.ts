@@ -5,7 +5,7 @@ export interface defaultAPIParams {
   task: string;
   server: string;
 }
-export type AvailableTools = "merge" | "pdfjpg";
+export type AvailableTools = "merge" | "pdfjpg" | "compress";
 export type TaskStatus =
   | "TaskWaiting"
   | "TaskProcessing"

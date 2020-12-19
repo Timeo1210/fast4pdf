@@ -1,6 +1,6 @@
 import commander from "commander";
 import { processCompress } from "src/types";
-import action from "./action";
+import defaultAction from "../../utils/defaultAction";
 
 export function makeCompressCommand(): commander.Command {
   const compress = new commander.Command("compress");
@@ -24,7 +24,7 @@ export function makeCompressCommand(): commander.Command {
         compression_level: compressionLevel,
       } as processCompress;
 
-      action(outputFile, inputFile, options);
+      defaultAction("compress", outputFile, inputFile, options);
     });
 
   return compress;

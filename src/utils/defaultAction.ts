@@ -1,16 +1,17 @@
 import path from "path";
 import fs from "fs";
-import API from "../../API/API";
+import API from "../API/API";
 import { AvailableTools, processCompress } from "src/types";
-import getTokenTaskServer from "../../utils/getTokenTaskServer";
+import getTokenTaskServer from "./getTokenTaskServer";
+import changeExtension from "./changeExtension";
 
-export default async function commandAction(
+export default async function defaultAction(
+  tool: AvailableTools,
   outputFile: string,
   inputFile: string,
   options: processCompress = { compression_level: "recommended" }
 ): Promise<void> {
   try {
-    const tool = "compress" as AvailableTools;
     const filename = path.basename(inputFile);
 
     const defaultParams = await getTokenTaskServer(tool);
@@ -18,7 +19,7 @@ export default async function commandAction(
       defaultParams,
       inputFile
     );
-    await API.processTask(
+    const { download_filename } = await API.processTask(
       defaultParams,
       tool,
       [
@@ -29,6 +30,11 @@ export default async function commandAction(
       ],
       options
     );
+    const dlExtension = path.extname(download_filename);
+    const outputExtension = path.basename(outputFile);
+    if (dlExtension !== outputExtension) {
+      outputFile = changeExtension(outputFile, dlExtension);
+    }
 
     const responseStream = await API.downloadFromTask(defaultParams);
     responseStream.pipe(fs.createWriteStream(outputFile));
