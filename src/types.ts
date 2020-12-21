@@ -10,7 +10,8 @@ export type AvailableTools =
   | "pdfjpg"
   | "compress"
   | "imagepdf"
-  | "unlock";
+  | "unlock"
+  | "officepdf";
 export type TaskStatus =
   | "TaskWaiting"
   | "TaskProcessing"
