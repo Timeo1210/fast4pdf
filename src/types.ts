@@ -11,7 +11,8 @@ export type AvailableTools =
   | "compress"
   | "imagepdf"
   | "unlock"
-  | "officepdf";
+  | "officepdf"
+  | "repair";
 export type TaskStatus =
   | "TaskWaiting"
   | "TaskProcessing"
