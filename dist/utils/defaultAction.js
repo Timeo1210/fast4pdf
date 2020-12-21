@@ -17,7 +17,7 @@ const fs_1 = __importDefault(require("fs"));
 const API_1 = __importDefault(require("../API/API"));
 const getTokenTaskServer_1 = __importDefault(require("./getTokenTaskServer"));
 const changeExtension_1 = __importDefault(require("./changeExtension"));
-function defaultAction(tool, outputFile, inputFile, options = { compression_level: "recommended" }) {
+function defaultAction(tool, outputFile, inputFile, options) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const filename = path_1.default.basename(inputFile);

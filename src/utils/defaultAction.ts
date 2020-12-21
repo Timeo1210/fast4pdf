@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import API from "../API/API";
-import { AvailableTools, processCompress } from "src/types";
+import { AvailableTools, processAll } from "src/types";
 import getTokenTaskServer from "./getTokenTaskServer";
 import changeExtension from "./changeExtension";
 
@@ -9,7 +9,7 @@ export default async function defaultAction(
   tool: AvailableTools,
   outputFile: string,
   inputFile: string,
-  options: processCompress = { compression_level: "recommended" }
+  options: processAll
 ): Promise<void> {
   try {
     const filename = path.basename(inputFile);
