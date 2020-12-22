@@ -7,6 +7,7 @@ import { makeOfficepdfCommand } from "./officepdf/officepdf";
 import { makeRepairCommand } from "./repair/repair";
 import { makeRotateCommand } from "./rotate/rotate";
 import { makeProtectCommand } from "./protect/protect";
+import { makePdfaCommand } from "./pdfa/pdfa";
 
 export default function makeCommands(program: commander.Command) {
   program.addCommand(makePdfjpgCommand());
@@ -17,4 +18,5 @@ export default function makeCommands(program: commander.Command) {
   program.addCommand(makeRepairCommand());
   program.addCommand(makeRotateCommand());
   program.addCommand(makeProtectCommand());
+  program.addCommand(makePdfaCommand());
 }

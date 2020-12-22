@@ -14,7 +14,8 @@ export type AvailableTools =
   | "officepdf"
   | "repair"
   | "rotate"
-  | "protect";
+  | "protect"
+  | "pdfa";
 export type TaskStatus =
   | "TaskWaiting"
   | "TaskProcessing"
@@ -80,6 +81,18 @@ export interface processProtect {
   [key: string]: any;
   password: string;
 }
+export interface processPdfaConformance {
+  [key: string]: any;
+  conformance:
+    | "pdfa-1b"
+    | "pdfa-1a"
+    | "pdfa-2b"
+    | "pdfa-2u"
+    | "pdfa-2a"
+    | "pdfa-3b"
+    | "pdfa-3u"
+    | "pdfa-3a";
+}
 export type processAll = processOther &
   XORS<
     [
@@ -90,6 +103,7 @@ export type processAll = processOther &
       processRotate,
       processProtect,
       processUnlock,
+      processPdfaConformance,
       {}
     ]
   >;

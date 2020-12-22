@@ -8,6 +8,7 @@ const officepdf_1 = require("./officepdf/officepdf");
 const repair_1 = require("./repair/repair");
 const rotate_1 = require("./rotate/rotate");
 const protect_1 = require("./protect/protect");
+const pdfa_1 = require("./pdfa/pdfa");
 function makeCommands(program) {
     program.addCommand(pdfjpg_1.makePdfjpgCommand());
     program.addCommand(compress_1.makeCompressCommand());
@@ -17,6 +18,7 @@ function makeCommands(program) {
     program.addCommand(repair_1.makeRepairCommand());
     program.addCommand(rotate_1.makeRotateCommand());
     program.addCommand(protect_1.makeProtectCommand());
+    program.addCommand(pdfa_1.makePdfaCommand());
 }
 exports.default = makeCommands;
 //# sourceMappingURL=makeCommands.js.map
