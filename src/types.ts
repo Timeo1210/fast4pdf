@@ -68,6 +68,10 @@ export interface processImgPdf {
   pagesize: "fit" | "A4" | "letter";
   merge_after?: boolean;
 }
+export interface processUnlock {
+  [key: string]: any;
+  password: string;
+}
 export interface processRotate {
   [key: string]: any;
   rotate: number;
@@ -84,6 +88,8 @@ export type processAll = processOther &
       processPdfjpg,
       processImgPdf,
       processRotate,
+      processProtect,
+      processUnlock,
       {}
     ]
   >;
