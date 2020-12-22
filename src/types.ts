@@ -13,7 +13,8 @@ export type AvailableTools =
   | "unlock"
   | "officepdf"
   | "repair"
-  | "rotate";
+  | "rotate"
+  | "protect";
 export type TaskStatus =
   | "TaskWaiting"
   | "TaskProcessing"
@@ -70,6 +71,10 @@ export interface processImgPdf {
 export interface processRotate {
   [key: string]: any;
   rotate: number;
+}
+export interface processProtect {
+  [key: string]: any;
+  password: string;
 }
 export type processAll = processOther &
   XORS<

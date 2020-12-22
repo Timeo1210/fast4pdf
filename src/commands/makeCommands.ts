@@ -6,6 +6,7 @@ import { makeUnlockCommand } from "./unlock/unlock";
 import { makeOfficepdfCommand } from "./officepdf/officepdf";
 import { makeRepairCommand } from "./repair/repair";
 import { makeRotateCommand } from "./rotate/rotate";
+import { makeProtectCommand } from "./protect/protect";
 
 export default function makeCommands(program: commander.Command) {
   program.addCommand(makePdfjpgCommand());
@@ -15,4 +16,5 @@ export default function makeCommands(program: commander.Command) {
   program.addCommand(makeOfficepdfCommand());
   program.addCommand(makeRepairCommand());
   program.addCommand(makeRotateCommand());
+  program.addCommand(makeProtectCommand());
 }
