@@ -32,7 +32,9 @@ export async function processTask(
     }
     const otherKeys = Object.keys(other) as Array<keyof typeof other & string>;
     for (let i = 0; i < otherKeys.length; i++) {
-      queryData.append(otherKeys[i], other[`${otherKeys[i]}`]);
+      const otherValue = other[`${otherKeys[i]}`];
+      if (!otherValue) continue;
+      queryData.append(otherKeys[i], otherValue);
     }
 
     const options = {

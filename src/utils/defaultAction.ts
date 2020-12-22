@@ -9,7 +9,7 @@ export default async function defaultAction(
   tool: AvailableTools,
   outputFile: string,
   inputFile: string,
-  options: processAll = {}
+  options: processAll
 ): Promise<void> {
   try {
     const filename = path.basename(inputFile);
@@ -26,6 +26,7 @@ export default async function defaultAction(
         {
           filename,
           server_filename,
+          rotate: options.rotate ? options.rotate : undefined,
         },
       ],
       options

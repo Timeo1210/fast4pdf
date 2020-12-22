@@ -17,6 +17,7 @@ export default function buildFilesData(files: processFiles): filesDataOutput {
     const fileKeys = Object.keys(file) as Array<keyof typeof file>;
     for (let j = 0; j < fileKeys.length; j++) {
       const fileValue = file[`${fileKeys[j]}`];
+      if (!fileValue) continue;
       filesData[`files[${i}][${fileKeys[j]}]`] = fileValue;
     }
   }

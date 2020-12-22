@@ -5,6 +5,7 @@ import { makeImagepdfCommand } from "./imagepdf/imagepdf";
 import { makeUnlockCommand } from "./unlock/unlock";
 import { makeOfficepdfCommand } from "./officepdf/officepdf";
 import { makeRepairCommand } from "./repair/repair";
+import { makeRotateCommand } from "./rotate/rotate";
 
 export default function makeCommands(program: commander.Command) {
   program.addCommand(makePdfjpgCommand());
@@ -13,4 +14,5 @@ export default function makeCommands(program: commander.Command) {
   program.addCommand(makeUnlockCommand());
   program.addCommand(makeOfficepdfCommand());
   program.addCommand(makeRepairCommand());
+  program.addCommand(makeRotateCommand());
 }

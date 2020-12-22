@@ -17,7 +17,7 @@ const fs_1 = __importDefault(require("fs"));
 const API_1 = __importDefault(require("../API/API"));
 const getTokenTaskServer_1 = __importDefault(require("./getTokenTaskServer"));
 const changeExtension_1 = __importDefault(require("./changeExtension"));
-function defaultAction(tool, outputFile, inputFile, options = {}) {
+function defaultAction(tool, outputFile, inputFile, options) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const filename = path_1.default.basename(inputFile);
@@ -27,6 +27,7 @@ function defaultAction(tool, outputFile, inputFile, options = {}) {
                 {
                     filename,
                     server_filename,
+                    rotate: options.rotate ? options.rotate : undefined,
                 },
             ], options);
             const dlExtension = path_1.default.extname(download_filename);

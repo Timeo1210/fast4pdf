@@ -12,7 +12,8 @@ export type AvailableTools =
   | "imagepdf"
   | "unlock"
   | "officepdf"
-  | "repair";
+  | "repair"
+  | "rotate";
 export type TaskStatus =
   | "TaskWaiting"
   | "TaskProcessing"
@@ -53,18 +54,31 @@ export interface processSplit {
 }
 export interface processCompress {
   [key: string]: any;
-  compression_level?: "extreme" | "recommended" | "low";
+  compression_level: "extreme" | "recommended" | "low";
 }
 export interface processPdfjpg {
   [key: string]: any;
-  pdfjpg_mode?: "pages" | "extract";
+  pdfjpg_mode: "pages" | "extract";
 }
 export interface processImgPdf {
   [key: string]: any;
-  orientation?: "portrait" | "landscape";
+  orientation: "portrait" | "landscape";
   margin: number;
   pagesize: "fit" | "A4" | "letter";
-  merge_after: boolean;
+  merge_after?: boolean;
+}
+export interface processRotate {
+  [key: string]: any;
+  rotate: number;
 }
 export type processAll = processOther &
-  XORS<[processSplit, processCompress, processPdfjpg, processImgPdf]>;
+  XORS<
+    [
+      processSplit,
+      processCompress,
+      processPdfjpg,
+      processImgPdf,
+      processRotate,
+      {}
+    ]
+  >;
