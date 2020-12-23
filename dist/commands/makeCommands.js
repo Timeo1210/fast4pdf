@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const merge_1 = require("./merge/merge");
 const pdfjpg_1 = require("./pdfjpg/pdfjpg");
 const compress_1 = require("./compress/compress");
 const imagepdf_1 = require("./imagepdf/imagepdf");
@@ -10,6 +11,7 @@ const rotate_1 = require("./rotate/rotate");
 const protect_1 = require("./protect/protect");
 const pdfa_1 = require("./pdfa/pdfa");
 function makeCommands(program) {
+    program.addCommand(merge_1.makeMergeCommand());
     program.addCommand(pdfjpg_1.makePdfjpgCommand());
     program.addCommand(compress_1.makeCompressCommand());
     program.addCommand(imagepdf_1.makeImagepdfCommand());

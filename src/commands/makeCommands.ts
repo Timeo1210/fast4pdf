@@ -1,4 +1,5 @@
 import commander from "commander";
+import { makeMergeCommand } from "./merge/merge";
 import { makePdfjpgCommand } from "./pdfjpg/pdfjpg";
 import { makeCompressCommand } from "./compress/compress";
 import { makeImagepdfCommand } from "./imagepdf/imagepdf";
@@ -10,6 +11,7 @@ import { makeProtectCommand } from "./protect/protect";
 import { makePdfaCommand } from "./pdfa/pdfa";
 
 export default function makeCommands(program: commander.Command) {
+  program.addCommand(makeMergeCommand());
   program.addCommand(makePdfjpgCommand());
   program.addCommand(makeCompressCommand());
   program.addCommand(makeImagepdfCommand());
