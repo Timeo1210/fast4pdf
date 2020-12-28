@@ -1,5 +1,6 @@
 import commander from "commander";
 import { makeMergeCommand } from "./merge/merge";
+import { makeSplitCommand } from "./split/split";
 import { makePdfjpgCommand } from "./pdfjpg/pdfjpg";
 import { makeCompressCommand } from "./compress/compress";
 import { makeImagepdfCommand } from "./imagepdf/imagepdf";
@@ -12,6 +13,7 @@ import { makePdfaCommand } from "./pdfa/pdfa";
 
 export default function makeCommands(program: commander.Command) {
   program.addCommand(makeMergeCommand());
+  program.addCommand(makeSplitCommand());
   program.addCommand(makePdfjpgCommand());
   program.addCommand(makeCompressCommand());
   program.addCommand(makeImagepdfCommand());

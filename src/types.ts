@@ -7,8 +7,9 @@ export interface defaultAPIParams {
 }
 export type AvailableTools =
   | "merge"
-  | "pdfjpg"
+  | "split"
   | "compress"
+  | "pdfjpg"
   | "imagepdf"
   | "unlock"
   | "officepdf"
@@ -49,9 +50,9 @@ export interface processOther {
 export interface processSplit {
   [key: string]: any;
   split_mode: "ranges" | "fixed_range" | "remove_pages";
-  ranges: string;
-  fixed_range: number;
-  remove_pages: string;
+  ranges?: string;
+  fixed_range?: number;
+  remove_pages?: string;
   merge_after: boolean;
 }
 export interface processCompress {
