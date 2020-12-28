@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import API from "../../API/API";
-import { AvailableTools, processUnlock } from "src/types";
+import { processUnlock } from "src/types";
 import getTokenTaskServer from "../../utils/getTokenTaskServer";
 import changeExtension from "../../utils/changeExtension";
 

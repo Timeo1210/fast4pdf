@@ -1,5 +1,3 @@
-import XORS from "ts-xors";
-
 import fs from "fs/promises";
 import path from "path";
 
