@@ -1,4 +1,5 @@
 import commander from "commander";
+import { make_ChangeAPIKeysCommand } from "./_changeAPIKeys/_changeAPIKeys";
 import { makeMergeCommand } from "./merge/merge";
 import { makeSplitCommand } from "./split/split";
 import { makePdfjpgCommand } from "./pdfjpg/pdfjpg";
@@ -12,6 +13,7 @@ import { makeProtectCommand } from "./protect/protect";
 import { makePdfaCommand } from "./pdfa/pdfa";
 
 export default function makeCommands(program: commander.Command) {
+  program.addCommand(make_ChangeAPIKeysCommand());
   program.addCommand(makeMergeCommand());
   program.addCommand(makeSplitCommand());
   program.addCommand(makePdfjpgCommand());

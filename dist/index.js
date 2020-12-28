@@ -8,7 +8,6 @@ const commander_1 = __importDefault(require("commander"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const makeCommands_1 = __importDefault(require("./commands/makeCommands"));
 const changeAPIKeys_1 = __importDefault(require("./utils/changeAPIKeys"));
-process.env.NODE_ENV = "production";
 if (process.env.NODE_ENV !== "production") {
     dotenv_1.default.config({
         path: "./.env.dev",

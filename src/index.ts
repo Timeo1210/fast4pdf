@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 import makeCommands from "./commands/makeCommands";
 import changeAPIKeys from "./utils/changeAPIKeys";
 
-process.env.NODE_ENV = "production";
 if (process.env.NODE_ENV !== "production") {
   dotenv.config({
     path: "./.env.dev",

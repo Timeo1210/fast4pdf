@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const _changeAPIKeys_1 = require("./_changeAPIKeys/_changeAPIKeys");
 const merge_1 = require("./merge/merge");
 const split_1 = require("./split/split");
 const pdfjpg_1 = require("./pdfjpg/pdfjpg");
@@ -12,6 +13,7 @@ const rotate_1 = require("./rotate/rotate");
 const protect_1 = require("./protect/protect");
 const pdfa_1 = require("./pdfa/pdfa");
 function makeCommands(program) {
+    program.addCommand(_changeAPIKeys_1.make_ChangeAPIKeysCommand());
     program.addCommand(merge_1.makeMergeCommand());
     program.addCommand(split_1.makeSplitCommand());
     program.addCommand(pdfjpg_1.makePdfjpgCommand());
