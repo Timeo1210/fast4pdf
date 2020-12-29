@@ -10,8 +10,7 @@ async function default_1(envObject) {
         const inputValue = envObject[inputKey];
         const envFile = path_1.default.resolve(path_1.default.dirname(path_1.default.dirname(__dirname)), "./.env.prod");
         const envFileData = (await promises_1.default.readFile(envFile)).toString();
-        if (envFileData.includes("PUBLIC_KEY") &&
-            envFileData.includes("PRIVATE_KEY")) {
+        if (envFileData.includes("PUBLIC_KEY")) {
             const envData = envFileData.split("\n");
             for (let i = 0; i < envData.length; i++) {
                 const [envDataKey] = envData[i].split("=");

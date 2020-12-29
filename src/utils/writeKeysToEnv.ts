@@ -5,11 +5,8 @@ interface PublicKeyInput {
   [key: string]: any;
   PUBLIC_KEY: string;
 }
-interface PrivateKeyInput {
-  [key: string]: any;
-  PRIVATE_KEY: string;
-}
-type envKeyType = PublicKeyInput | PrivateKeyInput;
+
+type envKeyType = PublicKeyInput;
 
 export default async function (envObject: envKeyType) {
   for (const inputKey in envObject) {
@@ -20,10 +17,7 @@ export default async function (envObject: envKeyType) {
       "./.env.prod"
     );
     const envFileData = (await fs.readFile(envFile)).toString();
-    if (
-      envFileData.includes("PUBLIC_KEY") &&
-      envFileData.includes("PRIVATE_KEY")
-    ) {
+    if (envFileData.includes("PUBLIC_KEY")) {
       const envData = envFileData.split("\n");
       for (let i = 0; i < envData.length; i++) {
         const [envDataKey] = envData[i].split("=");
