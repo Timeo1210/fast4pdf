@@ -1,0 +1,1 @@
+{"version":3,"file":"changeExtension.js","sourceRoot":"","sources":["../../src/utils/changeExtension.ts"],"names":[],"mappings":";;;;;AAAA,gDAAwB;AAExB,SAAwB,eAAe,CAAC,QAAgB,EAAE,SAAiB;IACzE,OAAO,cAAI,CAAC,IAAI,CACd,cAAI,CAAC,OAAO,CAAC,QAAQ,CAAC,EACtB,cAAI,CAAC,QAAQ,CAAC,QAAQ,EAAE,cAAI,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC,GAAG,SAAS,CAC5D,CAAC;AACJ,CAAC;AALD,kCAKC"}
