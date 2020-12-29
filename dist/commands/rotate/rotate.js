@@ -11,7 +11,7 @@ function makeRotateCommand() {
     rotate
         .arguments("<outputFile> <inputFile>")
         .option("-a, --angle <degres>", "Angle of the rotate in degres", "90")
-        .description("Roate your PDF to the ")
+        .description("Rotate your PDF")
         .action((outputFile, inputFile, args) => {
         const options = {
             rotate: args.angle,

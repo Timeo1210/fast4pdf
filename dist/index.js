@@ -6,6 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = __importDefault(require("commander"));
 const dotenv_1 = __importDefault(require("dotenv"));
+const path_1 = __importDefault(require("path"));
 const makeCommands_1 = __importDefault(require("./commands/makeCommands"));
 const changeAPIKeys_1 = __importDefault(require("./utils/changeAPIKeys"));
 process.env.NODE_ENV = "production";
@@ -14,14 +15,12 @@ process.env.NODE_ENV = "production";
         dotenv_1.default.config({
             path: "./.env.dev",
         });
-        console.log(process.env.PUBLIC_KEY);
     }
     else {
         dotenv_1.default.config({
-            path: "./.env.prod",
+            path: path_1.default.resolve(path_1.default.dirname(__dirname), ".env.prod"),
         });
-        if (process.env.PUBLIC_KEY === undefined ||
-            process.env.PRIVATE_KEY === undefined) {
+        if (process.env.PUBLIC_KEY === undefined) {
             await changeAPIKeys_1.default();
         }
     }
