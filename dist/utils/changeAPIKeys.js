@@ -11,7 +11,7 @@ function default_1() {
             input: process.stdin,
             output: process.stdout,
         });
-        console.log("Please inquire your API Keys: ");
+        console.log("Please inquire your API Key: ");
         console.log(`
       - Go to https://developer.ilovepdf.com/ and create an developer account.
       - Naviguate to https://developer.ilovepdf.com/user/projects and create a project.
@@ -21,13 +21,7 @@ function default_1() {
             writeKeysToEnv_1.default({
                 PUBLIC_KEY: publicKey,
             });
-            rl.question("Enter your Secret key: ", (answer) => {
-                const privateKey = answer.trim();
-                writeKeysToEnv_1.default({
-                    PRIVATE_KEY: privateKey,
-                });
-                rl.close();
-            });
+            rl.close();
         });
         rl.on("close", () => {
             resolve();

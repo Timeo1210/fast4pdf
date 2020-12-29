@@ -8,7 +8,7 @@ export default function (): Promise<void> {
       output: process.stdout,
     });
 
-    console.log("Please inquire your API Keys: ");
+    console.log("Please inquire your API Key: ");
     console.log(`
       - Go to https://developer.ilovepdf.com/ and create an developer account.
       - Naviguate to https://developer.ilovepdf.com/user/projects and create a project.
@@ -19,14 +19,7 @@ export default function (): Promise<void> {
         PUBLIC_KEY: publicKey,
       });
 
-      rl.question("Enter your Secret key: ", (answer) => {
-        const privateKey = answer.trim();
-        writeKeysToEnv({
-          PRIVATE_KEY: privateKey,
-        });
-
-        rl.close();
-      });
+      rl.close();
     });
 
     rl.on("close", () => {
